@@ -5,7 +5,10 @@ import Header from "./components/Header";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getFlights } from "./redux/actions";
+import Modal from "./components/Modal/index";
 const App = () => {
+  // deteyı goserılcek ucusun  id sı olcak.
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFlights());
@@ -19,6 +22,7 @@ const App = () => {
 
         <Route path="/list" element={<List />} />
       </Routes>
+      <Modal />
     </BrowserRouter>
   );
 };

@@ -91,3 +91,66 @@ header {
 .leaflet-container {
   height: calc(100vh - 76px);
 }
+.popup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  span {
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+}
+
+/* detay */
+.modal-outer {
+  position: fixed;
+  z-index: 99999;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  .modal-inner {
+    background: black;
+    width: 300px;
+    height: 90%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 2px 2px 20px #535bf2;
+    margin-left: 10px;
+    margin-top: 60px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 650) {
+  .modal-outer {
+    inset: 0;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    .modal-inner {
+      width: 70%;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 450) {
+  .modal-outer {
+    inset: 0;
+
+    .modal-inner {
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+      margin-left: 0;
+      border-radius: 0;
+    }
+  }
+}
